@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const client = new Discord.Client(
-    {intents:["GUILDS","GUILD_MEMBERS", "GUILD_MESSAGES"]}
+    {intents:["GUILDS","GUILD_MEMBERS", "GUILD_MESSAGES","GUILD_INTEGRATIONS"]}
 )
 
 client.login(process.env.token)
@@ -33,6 +33,12 @@ client.on("messageCreate", (message)=>{
             .setThumbnail("https://i.etsystatic.com/22506180/r/il/b4a550/2836602875/il_794xN.2836602875_lt8v.jpg")  
         message.channel.send({embeds: [comple]})
     }
+
+    var server = client.guilds.cache.get("850474885230755840")
+    server.commands.create({
+        name: "ping",
+        description: "test"
+     })
 }) 
 
  
