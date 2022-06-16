@@ -34,7 +34,7 @@ client.on("messageCreate", (message)=>{
         message.channel.send({embeds: [comple]})
     }
 
-    var server = client.guilds.cache.get("850474885230755840")
+    var server = client.guilds.cache.get("986931837651787786")
     server.commands.create({
         name: "ping",
         description: "test"
